@@ -1,37 +1,20 @@
 <script setup>
-
+  import Header from './components/Header.vue';
+  import CardList from './components/CardList.vue';
 </script>
 
 <template>
-  <div class="bg-white w-4/5 m-auto h-screen rounded-xl shadow-xl mt-10">
+  <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-10">
 
-    <header>
+    <Header />
 
-      <div>
-        <img src="/logo.png" alt="Logo" />
-      <div>
-        <h2>Vue Sneakers</h2>
-        <p>Магазин топовых кроссовок</p>
-      </div>
-      </div>
+    <div class="p-7">
 
-      <ul>
-        <li>
-          <img src="/cart.svg" alt="Cart" />
-          <b>45$</b>
-        </li>
-        <li>
-          <img src="/heart.svg" alt="Heart" />
-          <b>Закладки</b>
-        </li>
-        <li>
-          <img src="/profile.svg" alt="Profile icon" />
-          <b>Проофиль</b>
-        </li>
-      </ul>
-    </header>
+      <h2 class="text-3xl font-bold">Все кроссовки</h2>
 
-    <h1>DS blogging</h1>
+      <CardList />
+
+    </div>
 
   </div>
 </template>

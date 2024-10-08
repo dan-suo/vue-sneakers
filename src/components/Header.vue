@@ -1,0 +1,37 @@
+<script setup>
+
+</script>
+
+<template>
+
+    <header class="flex justify-between border-b border-slate-200 px-10 py-6">
+
+<div class="flex items-center gap-4">
+  <img src="/logo.png" alt="Logo" class="w-10"/>
+<div>
+  <h2 class="text-xl font-bold uppercase">Vue Sneakers</h2>
+  <p class="text-slate-400">Магазин топовых кроссовок</p>
+</div>
+</div>
+
+<ul class="flex items-center gap-10  text-gray-500">
+  <li class="flex items-center gap-3 hover:text-black cursor-pointer">
+    <img src="/cart.svg" alt="Cart" />
+    <b>45$</b>
+  </li>
+  <li class="flex items-center gap-3 hover:text-black cursor-pointer">
+    <img src="/heart.svg" alt="Heart" />
+    <span>Закладки</span>
+  </li>
+  <li class="flex items-center gap-3 hover:text-black cursor-pointer">
+    <img src="/profile.svg" alt="Profile icon" />
+    <span>Профиль</span>
+  </li>
+</ul>
+</header>
+
+</template>
+
+<style scoped>
+
+</style>

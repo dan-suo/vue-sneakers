@@ -1,6 +1,9 @@
 <script setup>
   import Card from './Card.vue'
-
+  
+  defineProps({
+    items: Array
+  })
   const onClickAdd = () => {
     alert('Добавлено в корзину');
   }
@@ -14,13 +17,15 @@
     <div class="grid grid-cols-4 gap-5 mt-7">
 
         <Card 
-        title="Мужские кроссовки Nike Blazer Mid Suede" 
-        image-url="/sneakers/sneakers-1.jpg" 
-        :price="95"
-        :isAdded="false"
-        :isFavorite="false"
-        :onClickAdd="onClickAdd"
-        :onClickFavorite="onClickFavorite"
+          v-for="item in items"
+          :key="item.id"
+          :title="item.title" 
+          :image-url="item.imageUrl" 
+          :price="item.price"
+          :isAdded="false"
+          :isFavorite="false"
+          :onClickAdd="onClickAdd"
+          :onClickFavorite="onClickFavorite"
         />
 
       </div>

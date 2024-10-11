@@ -1,7 +1,39 @@
 <script setup>
+  import { ref } from 'vue';
+  import { onMounted } from 'vue';
+  import axios from 'axios';
+
   import Drawer from './components/Drawer.vue';
   import Header from './components/Header.vue';
   import CardList from './components/CardList.vue';
+  
+  const items = ref([]);
+  
+  onMounted(async ()=> {
+
+    /* ВАРИАНТ ЧЕРЕЗ FETCH
+    fetch('https://6707bc588e86a8d9e42cb4c8.mockapi.io/sneakers/v1/items')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
+    })*/
+
+    // ВАРИАНТ СИНХРОННОГО ПОЛУЧЕНИЯ ДАННЫХ
+    //axios.get('https://6707bc588e86a8d9e42cb4c8.mockapi.io/sneakers/v1/items').then(resp => console.log(data));
+    //  });
+
+    // ВАРИАНТ АСИНХРОННОГО ПОЛУЧЕНИЯ ДАННЫХ
+    
+    try {
+      const { data } = await axios.get('https://6707bc588e86a8d9e42cb4c8.mockapi.io/sneakers/v1/items');
+      items.value = data;
+    } catch (error) {
+      console.log(error);
+    }
+
+  });
+
 </script>
 
 <template>
@@ -40,7 +72,9 @@
 
       </div>
 
-      <CardList />
+      <div class="mt-10">
+        <CardList :items="items"/>
+      </div>
 
     </div>
 
